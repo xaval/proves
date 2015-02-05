@@ -1,0 +1,49 @@
+a
+{
+	text-decoration: none;
+	color: DarkSeaGreen;
+}
+
+a:hover
+{
+	color: DarkSlateGray;
+}
+
+body,html 
+{
+	background: Aliceblue;
+  	font-family: Helvetica, sans-serif;
+  	font-size: 16px;
+}
+
+button
+{
+	padding: .5em;
+	background: CornflowerBlue;
+	margin: 1em;
+	color: white;
+	box-shadow: .5em .5em 1em black;
+	border-radius: 1em;
+}
+
+
+h1
+{
+	text-align: center;
+	text-decoration: underline;
+	font-size: 35px;
+	color: darkblue;
+}
+
+h2, h3
+{
+	color: Navy;	
+}
+
+li
+{
+	color: SlateGray;
+}
+
+
+	

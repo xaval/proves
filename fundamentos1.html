@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8" />
+	<title>Fundamentos de programción JavaScript parte 1.</title>
+	<meta name="description" content="En este ejercicio entenderemos fundamentos de programación en JavaScript" />
+	<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+	<h1>Fundamentos de programación en JavaScript parte 1.</h1>
+	<p>
+		<a href="index.html">Regresar al Inicio</a>
+	</p>
+	<h2>Definir a un perro</h2>
+	<script>
+		//comentario de una linea
+		// comentario de 
+		// 	varias 
+		// 	lineas de
+		// 	codigo
+		function Perro(n,r,e,s,a,f,c)
+		{
+			//this dentro de una función es el objeto que se define en la función
+			var o = this;
+
+			o.nombre = n;
+			o.raza = r;
+			o.edad = e;
+			// o.sexo = s;
+			o.adiestrado = a;
+			o.foto = f;
+			// o.comida = c;
+
+			//Asignación ( 1 igual = )
+			//Comparación ( 2 iguales == compara qu elos valores sean iguales )
+			// o.sexo = (s==true)?"Macho":"Hembra";
+			///Idéntico ( 3 iguales === compara que los valores y su tipo de dato sean idénticos )
+			// o.sexo = (s===true)?"Macho":"Hembra";
+
+			//operador ternario
+			//variable = (condición)?verdadero:falso
+			o.sexo = (s)?"Macho":"Hembra";
+			// console.log(typeof s, typeof n, typeof e);
+
+			//Metodos	
+			o.aparecer = function()
+			{
+				// alert("En menut es aki !!!!");	
+				imagen = document.createElement("img");
+				imagen.src = o.foto;
+				imagen.alt = o.nombre;
+				imagen.title = o.nombre;
+
+				document.body.appendChild(imagen);
+			}
+
+			o.ladrar = function()
+			{
+				alert("Guauuu !!!1 guauuuuuu");
+				var audio = document.createElement("audio");
+				audio.src = "activos/guau.mp3";
+
+				// audio.controls = true;	
+				// document.body.appendChild(audio);
+				return audio.play();
+			}
+
+			o.comer = function(c)
+			{
+				o.comida = c;
+
+				var alerta = alert("En "+o.nombre+" menja "+o.comida);
+				return alerta;
+			}
+
+			o.mover = function()
+			{
+				// alert("En menut sa mogut!!");
+				imagen.style.position = "relative";
+				imagen.style.left = "10em";
+				imagen.style.borderRadius = "50%";
+			}
+
+		}
+
+		function iniciar()
+		{
+			// alert("Funciona");
+			var menut = new Perro("Menut","bord",1,true,true,"activos/kenai.jpg");
+
+			// alert("menut");
+
+			document.write(menut+"<br />"+window+"<br />"+document+"<br />"+navigator);
+
+			console.log(menut,window,navigator,document);
+
+			document.write("<p>"+menut.nombre+"</p>");
+			document.write("<p>"+menut.raza+"</p>");
+			document.write("<p>"+menut.edad+"</p>");
+			document.write("<p>"+menut.sexo+"</p>");
+			document.write("<p>"+menut.adiestrado+"</p>");
+
+			menut.aparecer();
+			menut.ladrar();
+			menut.comer("ses sobres d'ahir !!!");
+			menut.mover();
+		}
+
+		iniciar();
+	</script>
+</body>
+</html>
